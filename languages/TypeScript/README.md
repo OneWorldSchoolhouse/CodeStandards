@@ -4,6 +4,10 @@
 * Forked from [https://github.com/Platypi/style_typescript](https://github.com/Platypi/style_typescript)
 * Work in progress, do not use yet!
 
+## Recommended Add-In Visual Studio
+* [Web Essentials](http://vswebessentials.com/download)
+* [Code Alignment](http://www.codealignment.com/)
+
 ## Coding Standards
 * All file shoule follow the general coding standards unless specificly stated here
 
