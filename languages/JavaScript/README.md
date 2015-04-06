@@ -1,4 +1,4 @@
-# TypeScript Style Guide
+# JavaScript Style Guide
 
 ## Coding Standards
 * All file shoule follow the general coding standards unless specificly stated here
@@ -30,7 +30,7 @@ _JSDocs can be interpreted by IDEs for better intellisense. Below is an example 
    *
    * @param name The name of the greeted person.
    */
-  function getGreeting(name: string): string {
+  function getGreeting(name) {
       return 'Hello ' + name + '!';
   }
   ```
@@ -57,7 +57,7 @@ _Proper variable declarations aids in code readability and helps prevent undecla
   // b will be defined on global scope.
   var a = b = 2, c = 4;
 
-  function add(a: number, b: number) {
+  function add(a, b) {
       // c is on the global scope!
       c = 6;
 
@@ -66,18 +66,14 @@ _Proper variable declarations aids in code readability and helps prevent undecla
   ```
 
 ## Function Declarations
-* Follow the General Standard.
-* There should be no space between the parameter and the colon `:` indicating the type declaration.
-* There should be a space between the colon `:` and the type declaration.
-
 ```
 // Standard Function Syntax
-function foo(param1: type, param2: type): returnType {
+function foo(param1, param2) {
     return 'foo';
 }
 
 // Example of returning a function
-function bar(name: string): string {
+function bar(name) {
     var message = "Hello ;
 
     function greet() {
@@ -87,11 +83,11 @@ function bar(name: string): string {
 }
 
 // Example of returning an object
-function foorbar(name: string): string {
+function foorbar(name) {
     var message = "Hello ";
 
     var foobar = {
-      greet: (name: string) => {
+      greet: function(name) {
           return message + name + "!";
         }
     };
@@ -100,17 +96,15 @@ function foorbar(name: string): string {
 ```
 
 ### Anonymous Functions
-* All anonymous functions should be defined as fat-arrow/lambda `() => { }` functions unless it is absolutely necessary to preserve the context in the function body.
-* All fat-arrow/lambda functions should have parenthesis `()` around the function parameters.
-* There should be a space between the right parenthesis `)` and the `=>`
-* There should be a space between the `=>` and the left curly brace `{` that begins the statement body.
+* All anonymous functions should be defined as `function() { }`.
+* There should be a space between the right parenthesis `)` and the `{`
 * The statement body should be indented like a normal function.
 * The right curly brace `}` should be on a new line and aligned with the line containing the left curly brace `{` that begins the function statement.
 
 ```
-element.addEventListener('click', (ev: Event) => { alert('foo'); });
+element.addEventListener('click', function(ev) { alert('foo'); });
 
-element.addEventListener('click', (ev: Event) => {
+element.addEventListener('click', function(ev) {
     alert('foo');
 });
 ```
@@ -119,58 +113,37 @@ element.addEventListener('click', (ev: Event) => {
 * Follow the General Standard.
 
 ### Types
-* Types should always be used. The use of type `any` should only be used sparingly, it is better to define an interface.
-* Arrays should be defined as `type[]` instead of `Array<type>` .
-* Always define the return type of functions.
+* There are no explicts types in JavaScript. 
+* To check type in code, use `typeof`
 
 ```
-// Like This
-var itemIndex: number;
-var greeting: string = "Hello World"; 
-var numbers: number[] = [];
+// Example of Checking Type
+var x = true;
+if(typeof x == "undefined") {}
+if(typeof x == "bool") {}
+if(typeof x == "number") {}
+if(x == null) {}
+
+// Note null != undefined
+var x; // undefined
+var y = null; // null
+
+function foo(x, y){
+  // To check if x or y is defined, do one of the following
+  x = x | {} // x = x OR whatever
+  if(typeof y != "undefined") {}
+}
 ```
 
 ### Classes
-```
-// Example class definition
-class Person {
-    private _fullName: string;
-
-    constructor(public firstName: string, public lastName: string) {
-        this._fullName = firstName + ' ' + lastName;
-    }
-    
-    public ToString() {
-        return this.__fullName;
-    }
-
-    private _walkFor(millis: number) {
-        console.log(this._fullName + ' is now walking.');
-
-        // Wait for millis milliseconds to stop walking
-        setTimeout(() => {
-            console.log(this._fullName + ' has stopped walking.');
-        }, millis);
-    }
-}
-```
+* There really aren't class in JavaScript (yet, in the ES6 there will be!)
+* Using Object Prototyping class can be accomplished.
+* Follow the regular function definitions for this.
 
 ## Statements
 ### Simple
 * Each line should contain at most one statement.
 * A semicolon should be placed at the end of every simple statement.
-
-### Return
-* Always **explicitly define a return type**. This can help TypeScript validate that you are always returning something that matches the correct type.
-
-```
-function getHighestNumber(a: number, b: number): number {
-    if(a >= b) {
-        return a;
-    }
-    return b;
-}
-```
 
 ### If
 _If statements should take the following form:_
@@ -254,19 +227,19 @@ switch (/* expression */) {
 ```
 
 ### Try
-* Try statements should be avoided whenever possible. Use an error paramter in callback functions or reject promises instead.
+* Try statements should be avoided whenever possible. Use an error parameter in callback functions or reject promises instead.
 
 _Try statements should have the following form:_
 ```
 try {
     // ...
-} catch (error: Error) {
+} catch (error) {
     // ...
 }
 
 try {
     // ...
-} catch (error: Error) {
+} catch (error) {
     // ...
 } finally {
     // ...
@@ -332,8 +305,8 @@ true === 1; //false
 * **Never use the Function constructor**
 * **Never pass strings to `setTimeout` or `setInterval`**
 
-## TSLint
+## JSHint / JSCS
 * Always use a Linter. The Web Essentials VS AddIn comes with one. 
-* Use the `tslint.json` file in the reposisotry to help keep all code consistent.
+* Use the `.jshintrc` and the `.jscsrc` file in the reposisotry to help keep all code consistent.
 
 Linting your code is very helpful for preventing minor issues that can escape the eye during development. 
