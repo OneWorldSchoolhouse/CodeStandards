@@ -65,7 +65,7 @@ accessor type function foo(type param1, type param2) {
 ```
 
 ## Names
-* All variable and function names should be formed with alphanumeric `A-Z, a-z, 0-9` and underscore `_` charcters.
+* All variable and function names should be formed with alphanumeric `A-Z, a-z, 0-9` and underscore `_` characters.
 * All constants should use UPPER_SNAKE_CASE.
 * All variable, module, and function names should use lowerCamelCase or UpperCamelCase (PascalCase) depending on filetype.
 
@@ -75,9 +75,9 @@ accessor type function foo(type param1, type param2) {
 * Classes/Constructors should use UpperCamelCase (PascalCase).
 * Class properties names should use UpperCamelCase (PascalCase).
 * `Private` and `private static` members in classes should be denoted with the `private` keyword.
-* `Private`, `private static`, ansd `Protected` members should be prefaced with one underscore `_`.
+* `Private`, `private static`, and `Protected` members should be prefaced with one underscore `_`.
 
-* All class memebers should be listed at the top of the class defintion group be accessor.
+* All class members should be listed at the top of the class definition group.
 * The constuctor(s) should be after the class members.
 * The public functions should be listed after the constructor(s).
 * `Private` functions should be group together at the end of the file.
@@ -98,7 +98,7 @@ accessor type function foo(type param1, type param2) {
 _Compound statements are statements containing lists of statements enclosed in curly braces `{}`._
 * The enclosed statements should start on a newline.
 * The enclosed statements should be indented according to filetype.
-* Compount statements do not need to end in a semicolon `;` with the exception of a `do { } while();` statement.
+* Compound statements do not need to end in a semicolon `;` with the exception of a `do { } while();` statement.
 * The left curly brace `{` should be at the end of the line that begins the compound statement.
 * The right curly brace `}` should begin a line and be indented to align with the line containing the left curly brace `{`.
 
@@ -195,7 +195,7 @@ switch (/* expression */) {
 }
 ```
 
-  
+
 ### Try
 * Try statements should be avoided if possible. They are not a good way of providing flow control.
 * Some languages it is not possible to avoid.
@@ -227,8 +227,8 @@ try {
 
 ## Whitespace
 ### Black Lines
-* Blank lines improve code readability by allowing the developer to logically group code blocks. 
-* Do not you use then one blank line continuosly. Use a comment instead to seperate the code
+* Blank lines improve code readability by allowing the developer to logically group code blocks.
+* Do not you use then one blank line continuously. Use a comment instead to separate the code
 
 ### Blank Space
 Blank spaces should be used in the following circumstances.
@@ -262,4 +262,3 @@ for(var i = 0; i < 10; ++i) {
     // ...
 }
 ```
-

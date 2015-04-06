@@ -1,7 +1,7 @@
 # JavaScript Style Guide
 
 ## Coding Standards
-* All file shoule follow the general coding standards unless specificly stated here
+* All file should follow the general coding standards unless specifically stated here
 
 ## Indentation
 * The unit of indentation is 2 spaces.
@@ -9,7 +9,7 @@
 
 ## Quotes
 * Use double-quotes `"` for all strings, and use single-quotes `'` for strings within strings.
-* This is to stay consistent with other languages that do not use signel quotes
+* This is to stay consistent with other languages that do not use single quotes
 
 ```
 var greeting = "Hello World!";
@@ -18,7 +18,7 @@ var html = "<div class='bold'>Hello World</div>";
 
 ## Comments
 * Follow the General Coding Standards
-* It is recommened that classes and public or exported functions should have a comment block `/**...*/` using [JSDoc](http://usejsdoc.org/) style comments.
+* It is recommended that classes and public or exported functions should have a comment block `/**...*/` using [JSDoc](http://usejsdoc.org/) style comments.
 * Functions should have a comment explaining what the function does and what all of the input parameters are/do.
 * Classes should include a block comment containing the description of the class
 
@@ -113,7 +113,7 @@ element.addEventListener('click', function(ev) {
 * Follow the General Standard.
 
 ### Types
-* There are no explicts types in JavaScript. 
+* There are no "types" in JavaScript since it is a scripting language.
 * To check type in code, use `typeof`
 
 ```
@@ -254,8 +254,8 @@ try {
 
 ## Whitespace
 ### Black Lines
-* Blank lines improve code readability by allowing the developer to logically group code blocks. 
-* Do not you use then one blank line continuosly. Use a comment instead to seperate the code
+* Blank lines improve code readability by allowing the developer to logically group code blocks.
+* Do not you use then one blank line continuously. Use a comment instead to separate the code
 
 ### Blank Space
 Blank spaces should be used in the following circumstances.
@@ -288,7 +288,7 @@ while (node = node.next) {
 ## === and !== Operators
 * There are both `==` && `===` operators in JavaSrcipt / TypeScript. They are slightly different.
 * There is much discussion online about the effects of `==` && `!=` vs. `===` & `!==`. It is recommend that one research the difference.
-* Equality: `==` and `!=` operators will convert the variables to the same before the comparision (type coercion). 
+* Equality: `==` and `!=` operators will convert the variables to the same before the comparison (type coercion).
 * Identity: `===` and `!==` operators will check for the same type and value.
 
 Example:
@@ -306,7 +306,7 @@ true === 1; //false
 * **Never pass strings to `setTimeout` or `setInterval`**
 
 ## JSHint / JSCS
-* Always use a Linter. The Web Essentials VS AddIn comes with one. 
-* Use the `.jshintrc` and the `.jscsrc` file in the reposisotry to help keep all code consistent.
+* Always use a Linter. The Web Essentials VS Add-In comes with one.
+* Use the `.jshintrc` and the `.jscsrc` file in the repository to help keep all code consistent.
 
-Linting your code is very helpful for preventing minor issues that can escape the eye during development. 
+Linting your code is very helpful for preventing minor issues that can escape the eye during development.
