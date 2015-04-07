@@ -7,6 +7,7 @@ more details can be found here: http://johnmacfarlane.net/pandoc/
 # Convert .md to .docx
 
 Note: these instructions are windows-centric.  Pandoc is supported on Windows, Mac, and Linux, so follow their instructions if these aren't sufficient.
+
 1. download and install pandoc from https://github.com/jgm/pandoc/releases
 2. verify installation from cmd with pandoc --version
 3. save .md file to computer
