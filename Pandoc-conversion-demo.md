@@ -13,6 +13,6 @@ Note: these instructions are windows-centric.  Pandoc is supported on Windows, M
 3. save .md file to computer
 4. convert by using the following in a command line
      
-     pandoc -s -S <yourMDFile> -o <outputFileName>.docx
+     pandoc -s -S [yourMDFile] -o [outputFileName].docx
      
 For more conversions, see http://johnmacfarlane.net/pandoc/demos.html
